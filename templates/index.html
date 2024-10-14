@@ -1,0 +1,52 @@
+{% load static tailwind_tags %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Poisa Due</title>
+
+    {% load bootstrap5 %}
+    {% bootstrap_css %}
+    {% bootstrap_javascript %}
+    {% tailwind_css %}
+    <style>
+      /* Add styles to center the button */
+      .center-div {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh; /* Full viewport height */
+      }
+      </style>
+</head>
+<body>
+  <!-- Centered button -->
+  <div class="center-div">
+    
+    <div class="card" style="width: 18rem;">
+      <button type="button" id="datetime" class="btn btn-primary position-relative">
+        <span class="position-absolute top-0 start-100 translate-middle p-2 bg-danger border border-light rounded-circle">
+          <span class="visually-hidden">New alerts</span>
+        </span>
+      </button>  
+      <div class="card-body">
+        <div class="flex items-end">
+          <h1 class="card-title text-9xl">{{balance}}</h1>
+          <p class="ml-auto">prints done</p>
+        </div>
+        
+        <p class="card-text my-4 flex">Amount due: &#8377; <span id="amountdue" onload="amountdue()">{{balance}}</span></p>
+        <div class="flex justify-evenly w-full">
+          <a href="{% url 'pickups' %}" class="btn btn-primary">Pickups due</a>
+          <a href="" class="btn btn-primary" id="paybtn">Pay now!</a>
+        </div>  
+      </div>
+      <img src="https://cdn-icons-png.freepik.com/512/2419/2419329.png" alt="" srcset="" class="w-5">
+    </div>
+  </div>
+
+  <script src="{% static 'script.js' %}"></script>
+</body>
+</html>
