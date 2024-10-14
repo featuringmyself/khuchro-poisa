@@ -2,27 +2,14 @@
     "version": 2,
     "builds": [
       {
-        "src": "myapp/wsgi.py", 
-        "use": "@vercel/python",
-        "config": {"maxLambdaSize": "15mb","runtime":"python3.13"}
-      },
-      {
-        "src":"build_files.sh",
-        "use":"@vercel/staticfiles_build",
-        "config":{
-            "distDir": "staticfiles_build"
-        }
+        "src": "khuchro_poisa/wsgi.py", 
+        "use": "@vercel/python"
       }
-
     ],
     "routes": [
       {
-        "src": "/static/(.*)",
-        "dest": "/static/$1"
-      },
-      {
         "src": "/(.*)",
-        "dest": "poll/wsgi.py"
+        "dest": "khuchro_poisa/wsgi.py" 
       }
     ]
   }
