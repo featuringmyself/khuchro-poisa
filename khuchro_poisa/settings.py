@@ -88,8 +88,12 @@ WSGI_APPLICATION = 'khuchro_poisa.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'railway',  # From your PostgreSQL provider
+        'USER': 'postgres',  # From your PostgreSQL provider
+        'PASSWORD': 'FWuhTPgIsjyIwPOKiSDGhfzldOdVwKXq',  # From your PostgreSQL provider
+        'HOST': 'postgres.railway.internal',  # From your PostgreSQL provider, like 'my-database-url.elephantsql.com'
+        'PORT': '5432',  # Default PostgreSQL port, can be different depending on your provider
     }
 }
 
