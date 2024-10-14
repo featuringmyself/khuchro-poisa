@@ -49,7 +49,7 @@ TAILWIND_APP_NAME = 'theme'
 NPM_BIN_PATH = r'C:\Program Files\nodejs\npm.cmd'
 
 STATIC_URL = '/static/'
-STATICFILES_DIRS = [os.path.join(BASE_DIR,'static')]
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'staticfiles_build' ,'static')]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
